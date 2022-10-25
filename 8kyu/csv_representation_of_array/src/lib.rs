@@ -1,6 +1,24 @@
 use itertools::Itertools;
 
 // https://www.codewars.com/kata/5a34af40e1ce0eb1f5000036/train/rust
+
+// First Attempt
+// pub fn to_csv_text(array: &[Vec<i8>]) -> String {
+//     let mut csv_text = String::new();
+//     for (rows_index, rows) in array.iter().enumerate() {
+//         if rows_index.gt(&0) {
+//             csv_text.push_str("\n");
+//         }
+//         for (item_index, item) in rows.iter().enumerate() {
+//             if item_index.gt(&0) {
+//                 csv_text.push_str(",");
+//             }
+//             csv_text.push_str(item.to_string().as_str());
+//         }
+//     }
+//     csv_text
+// }
+
 pub fn to_csv_text(array: &[Vec<i8>]) -> String {
     array
         .iter()

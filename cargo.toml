@@ -7,6 +7,6 @@ members = [
   # "4kyu/*",
   # "5kyu/*",
   # "6kyu/*",
-  # "7kyu/*",
+  "7kyu/*",
   "8kyu/*"
 ]
