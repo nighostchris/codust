@@ -1,6 +1,6 @@
-use itertools::Itertools;
-
 // https://www.codewars.com/kata/5a34af40e1ce0eb1f5000036/train/rust
+
+use itertools::Itertools;
 
 // First Attempt
 // pub fn to_csv_text(array: &[Vec<i8>]) -> String {
@@ -47,7 +47,7 @@ mod to_csv_text_test_suite {
     }
 
     #[test]
-    fn fixed_tests() {
+    fn basic() {
         for (input, expected) in [
             (
                 vec![
@@ -76,7 +76,7 @@ mod to_csv_text_test_suite {
     }
 
     #[test]
-    fn random_tests() {
+    fn random() {
         let mut rng = thread_rng();
         for _ in 0..100 {
             let l = rng.gen_range(2..=10_usize);

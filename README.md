@@ -10,6 +10,12 @@ cargo test // Run test suite against solutions to validate them
 
 ## Quick links to solutions
 
+### 6kyu
+
+| Kata                                                                                                                               | Solved On   |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| [Help the bookseller](https://github.com/nighostchris/codust/blob/master/6kyu/help_the_bookseller/src/lib.rs)                      | N/A         |
+
 ### 7kyu
 
 | Kata                                                                                                                               | Solved On   |
