@@ -14,7 +14,8 @@ cargo test // Run test suite against solutions to validate them
 
 | Kata                                                                                                                               | Solved On   |
 | ---------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| [Help the bookseller](https://github.com/nighostchris/codust/blob/master/6kyu/help_the_bookseller/src/lib.rs)                      | N/A         |
+| [Help the bookseller](https://github.com/nighostchris/codust/blob/master/6kyu/help_the_bookseller/src/lib.rs)                      | 28-10-2022  |
+| [Make the Deadfish Swim](https://github.com/nighostchris/codust/blob/master/6kyu/make_the_deadfish_swim/src/lib.rs)                | 28-10-2022  |
 
 ### 7kyu
 
