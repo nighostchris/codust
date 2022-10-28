@@ -46,7 +46,13 @@ pub fn stock_list(list_art: Vec<&str>, list_cat: Vec<&str>) -> String {
 
     list_cat
         .iter()
-        .map(|&category| format!("({} : {})", category, stock_hash_map.get(category).unwrap_or(&0)))
+        .map(|&category| {
+            format!(
+                "({} : {})",
+                category,
+                stock_hash_map.get(category).unwrap_or(&0)
+            )
+        })
         .collect::<Vec<String>>()
         .join(" - ")
         .to_string()
@@ -81,7 +87,13 @@ mod stock_list_test_suite {
         c = vec!["A", "B", "C", "W"];
         dotest(b, c, "(A : 0) - (B : 114) - (C : 70) - (W : 0)");
 
-        b = vec!["ROXANNE 102", "RHODODE 123", "BKWRKAA 125", "BTSQZFG 239", "DRTYMKH 060"];
+        b = vec![
+            "ROXANNE 102",
+            "RHODODE 123",
+            "BKWRKAA 125",
+            "BTSQZFG 239",
+            "DRTYMKH 060",
+        ];
         c = vec!["B", "R", "D", "X"];
         dotest(b, c, "(B : 364) - (R : 225) - (D : 60) - (X : 0)");
 
@@ -89,11 +101,23 @@ mod stock_list_test_suite {
         c = vec!["B", "R", "D", "X"];
         dotest(b, c, "");
 
-        b = vec!["ROXANNE 102", "RHODODE 123", "BKWRKAA 125", "BTSQZFG 239", "DRTYMKH 060"];
+        b = vec![
+            "ROXANNE 102",
+            "RHODODE 123",
+            "BKWRKAA 125",
+            "BTSQZFG 239",
+            "DRTYMKH 060",
+        ];
         c = vec![];
         dotest(b, c, "");
 
-        b = vec!["ROXANNE 102", "RHODODE 123", "BKWRKAA 125", "BTSQZFG 239", "DRTYMKH 060"];
+        b = vec![
+            "ROXANNE 102",
+            "RHODODE 123",
+            "BKWRKAA 125",
+            "BTSQZFG 239",
+            "DRTYMKH 060",
+        ];
         c = vec!["U", "V", "R"];
         dotest(b, c, "(U : 0) - (V : 0) - (R : 225)");
     }
@@ -121,24 +145,75 @@ mod stock_list_test_suite {
     }
 
     extern crate rand;
-    use self::rand::{thread_rng, Rng};
     use self::rand::seq::SliceRandom;
+    use self::rand::{thread_rng, Rng};
 
     fn compose() -> (Vec<&'static str>, Vec<&'static str>) {
-        let mut d = vec!["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600",  "ABAR 200", "CDXEF 500", "BKWRW 250", "BTSQA 890", "DRTYU 600",  
-            "CBART 20", "CDXEG 50", "BKWRK 25", "BTSQZ 89", "DRTYM 60", "ROXANNE 102", "RHODODE 123", "BKWRKAA 125", "BTSQZFG 239", "DRTYMKH 060",  
-            "ROXANNEB 102", "RHODODEA 123", "BKWRKAB 125", "BTSQZA 239", "DRTYMKA 060",  "ROXANNEA 102", "RHODODEB 123", "BKWRKAC 125", "BTSQZB 239", "DRTYMKB 060", 
-            "ROXANNEC 102", "RHODODEC 123", "BKWRKAD 125", "BTSQZC 239", "DRTYMC 060", "RHIB 1230", "RO 530", "XILO 32", 
-            "ROXANNEZ 102", "RHODODED 123", "BKWRKAE 125", "BTSQZD 239", "DRTYMD 060", "RHIBA 1230", "ROA 530", "XILOA 32", 
-            "UZO 32000", "ROXANNES 102", "RHODODEF 123", "BKWRKAF 125", "BTSQZE 239", "DRTYME 060", "RHIBB 1230", "ROB 530", "XILOB 32"];
-        let mut l = vec!["A",  "B",  "C",  "F",  "D",  "R",  "U",  "X",  "W"];
+        let mut d = vec![
+            "BBAR 150",
+            "CDXE 515",
+            "BKWR 250",
+            "BTSQ 890",
+            "DRTY 600",
+            "ABAR 200",
+            "CDXEF 500",
+            "BKWRW 250",
+            "BTSQA 890",
+            "DRTYU 600",
+            "CBART 20",
+            "CDXEG 50",
+            "BKWRK 25",
+            "BTSQZ 89",
+            "DRTYM 60",
+            "ROXANNE 102",
+            "RHODODE 123",
+            "BKWRKAA 125",
+            "BTSQZFG 239",
+            "DRTYMKH 060",
+            "ROXANNEB 102",
+            "RHODODEA 123",
+            "BKWRKAB 125",
+            "BTSQZA 239",
+            "DRTYMKA 060",
+            "ROXANNEA 102",
+            "RHODODEB 123",
+            "BKWRKAC 125",
+            "BTSQZB 239",
+            "DRTYMKB 060",
+            "ROXANNEC 102",
+            "RHODODEC 123",
+            "BKWRKAD 125",
+            "BTSQZC 239",
+            "DRTYMC 060",
+            "RHIB 1230",
+            "RO 530",
+            "XILO 32",
+            "ROXANNEZ 102",
+            "RHODODED 123",
+            "BKWRKAE 125",
+            "BTSQZD 239",
+            "DRTYMD 060",
+            "RHIBA 1230",
+            "ROA 530",
+            "XILOA 32",
+            "UZO 32000",
+            "ROXANNES 102",
+            "RHODODEF 123",
+            "BKWRKAF 125",
+            "BTSQZE 239",
+            "DRTYME 060",
+            "RHIBB 1230",
+            "ROB 530",
+            "XILOB 32",
+        ];
+        let mut l = vec!["A", "B", "C", "F", "D", "R", "U", "X", "W"];
         let mut rng = rand::thread_rng();
         d.shuffle(&mut thread_rng());
         l.shuffle(&mut thread_rng());
         let r = rng.gen_range(5..10);
         let la = &d[1..r];
         let rr = rng.gen_range(4..6);
-        let lc = &l[1..rr];      
+        let lc = &l[1..rr];
         return (la.to_vec(), lc.to_vec());
     }
 

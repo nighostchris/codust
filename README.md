@@ -28,3 +28,4 @@ cargo test // Run test suite against solutions to validate them
 | Kata                                                                                                                               | Solved On   |
 | ---------------------------------------------------------------------------------------------------------------------------------- | ----------- |
 | [CSV representation of array](https://github.com/nighostchris/codust/blob/master/8kyu/csv_representation_of_array/src/lib.rs)      | 24-10-2022  |
+| [String repeat](https://github.com/nighostchris/codust/blob/master/8kyu/string_repeat/src/lib.rs)                                  | 28-10-2022  |

@@ -54,10 +54,8 @@ mod parse_test_suite {
 
     #[test]
     fn basic() {
-        assert_eq!(parse("iiisdoso"),
-            vec![8, 64]);
-        assert_eq!(parse("iiisdosodddddiso"),
-            vec![8, 64, 3600]);
+        assert_eq!(parse("iiisdoso"), vec![8, 64]);
+        assert_eq!(parse("iiisdosodddddiso"), vec![8, 64, 3600]);
     }
 
     fn solution(code: &str) -> Vec<i32> {
@@ -66,11 +64,21 @@ mod parse_test_suite {
 
         for c in code.chars() {
             match c {
-                'i' => { value += 1; },
-                'd' => { value -= 1; },
-                's' => { value *= value; },
-                'o' => { output.push(value); },
-                _   => { continue; }
+                'i' => {
+                    value += 1;
+                }
+                'd' => {
+                    value -= 1;
+                }
+                's' => {
+                    value *= value;
+                }
+                'o' => {
+                    output.push(value);
+                }
+                _ => {
+                    continue;
+                }
             };
         }
 
@@ -78,7 +86,7 @@ mod parse_test_suite {
     }
 
     fn random_deadfish() -> String {
-        let chars : Vec<char> = "idsoa".chars().collect();
+        let chars: Vec<char> = "idsoa".chars().collect();
         let mut fish = String::new();
 
         for _ in 0..6 {
@@ -92,10 +100,9 @@ mod parse_test_suite {
     #[test]
     fn random() {
         for _ in 0..1000 {
-            let fish : &str = &random_deadfish();
+            let fish: &str = &random_deadfish();
 
-            assert_eq!(parse(fish),
-                solution(fish));
+            assert_eq!(parse(fish), solution(fish));
         }
     }
 }
