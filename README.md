@@ -16,12 +16,14 @@ cargo test // Run test suite against solutions to validate them
 | ---------------------------------------------------------------------------------------------------------------------------------- | ----------- |
 | [Help the bookseller](https://github.com/nighostchris/codust/blob/master/6kyu/help_the_bookseller/src/lib.rs)                      | 28-10-2022  |
 | [Make the Deadfish Swim](https://github.com/nighostchris/codust/blob/master/6kyu/make_the_deadfish_swim/src/lib.rs)                | 28-10-2022  |
+| [Easy Balance Checking](https://github.com/nighostchris/codust/blob/master/6kyu/easy_balance_checking/src/lib.rs)                  | 28-10-2022  |
 
 ### 7kyu
 
 | Kata                                                                                                                               | Solved On   |
 | ---------------------------------------------------------------------------------------------------------------------------------- | ----------- |
 | [Minimum sum of array](https://github.com/nighostchris/codust/blob/master/7kyu/minimum_sum_of_array/src/lib.rs)                    | 25-10-2022  |
+| [Exes and Ohs](https://github.com/nighostchris/codust/blob/master/7kyu/exes_and_ohs/src/lib.rs)                                    | 28-10-2022  |
 
 ### 8kyu
 
