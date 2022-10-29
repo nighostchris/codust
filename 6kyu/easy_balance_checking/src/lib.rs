@@ -54,10 +54,7 @@ pub fn balance(book: &str) -> String {
     let re = Regex::new(r"[^\w\d\.\s]").unwrap();
 
     let book = re.replace_all(book, "");
-    let book: Vec<&str> = book
-        .split("\n")
-        .filter(|x| !x.is_empty())
-        .collect();
+    let book: Vec<&str> = book.split("\n").filter(|x| !x.is_empty()).collect();
 
     let mut spent: f32 = 0.0;
     let mut balance = book[0].parse::<f32>().unwrap();
@@ -73,14 +70,20 @@ pub fn balance(book: &str) -> String {
                 let amount = amount.parse::<f32>().unwrap();
                 balance -= amount;
                 spent += amount;
-                format!("{} {} {:.2} Balance {:.2}", check_number, category, amount, balance)
+                format!(
+                    "{} {} {:.2} Balance {:.2}",
+                    check_number, category, amount, balance
+                )
             }
         })
         .collect::<Vec<String>>()
         .join("\n");
 
     output.push_str(&format!("\nTotal expense  {:.2}", spent));
-    output.push_str(&format!("\nAverage expense  {:.2}", spent / (book.len() - 1) as f32));
+    output.push_str(&format!(
+        "\nAverage expense  {:.2}",
+        spent / (book.len() - 1) as f32
+    ));
 
     output
 }
