@@ -10,6 +10,12 @@ cargo test // Run test suite against solutions to validate them
 
 ## Quick links to solutions
 
+### 5kyu
+
+| Kata                                                                                                                               | Solved On   |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| [Moving Zeros To The End](https://github.com/nighostchris/codust/blob/master/8kyu/moving_zeros_to_the_end/src/lib.rs)              | 01-11-2022  |
+
 ### 6kyu
 
 | Kata                                                                                                                               | Solved On   |
