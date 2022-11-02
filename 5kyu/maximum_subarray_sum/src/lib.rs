@@ -27,7 +27,7 @@
 //                 })
 //             };
 //         });
-    
+
 //     let maximum_value = subarray_sum_map
 //         .iter()
 //         .map(|subarray| subarray.iter().max().unwrap())
@@ -40,13 +40,11 @@
 pub fn max_sequence(seq: &[i32]) -> i32 {
     let mut maximum = 0;
 
-    seq
-        .iter()
-        .fold(0, |acc, &element| {
-            let local_max = element.max(acc + element);
-            maximum = maximum.max(local_max);
-            local_max
-        });
+    seq.iter().fold(0, |acc, &element| {
+        let local_max = element.max(acc + element);
+        maximum = maximum.max(local_max);
+        local_max
+    });
     maximum
 }
 
@@ -71,9 +69,18 @@ mod maximum_subarray_sum_test_suite {
         assert_eq!(max_sequence(&[-32]), 0);
         assert_eq!(max_sequence(&Vec::new()), 0);
         assert_eq!(max_sequence(&[-2, 1, -7, 4, -10, 2, 1, 5, 4]), 12);
-        assert_eq!(max_sequence(&[-83, 56, 61, -12, 39, -68, 44, -40, -47, -93]), 144);
-        assert_eq!(max_sequence(&[-32, -24, -43, -43, -55, 75, -24, 55, -49, 37]), 106);
-        assert_eq!(max_sequence(&[58, 26, 51, -88, 25, -27, -45, 86, 32, 48]), 166);
+        assert_eq!(
+            max_sequence(&[-83, 56, 61, -12, 39, -68, 44, -40, -47, -93]),
+            144
+        );
+        assert_eq!(
+            max_sequence(&[-32, -24, -43, -43, -55, 75, -24, 55, -49, 37]),
+            106
+        );
+        assert_eq!(
+            max_sequence(&[58, 26, 51, -88, 25, -27, -45, 86, 32, 48]),
+            166
+        );
     }
 
     #[test]
@@ -84,7 +91,12 @@ mod maximum_subarray_sum_test_suite {
             let len = rng.gen_range(0..51);
             let input: Vec<i32> = (0..len).map(|_| rng.gen_range(-100..101)).collect();
             let expected = reference_solution(&input);
-            assert_eq!(max_sequence(&input), expected, "failed on input: {:#?}", input);
+            assert_eq!(
+                max_sequence(&input),
+                expected,
+                "failed on input: {:#?}",
+                input
+            );
         }
     }
 }

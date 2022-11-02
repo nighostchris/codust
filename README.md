@@ -10,6 +10,12 @@ cargo test // Run test suite against solutions to validate them
 
 ## Quick links to solutions
 
+### 4kyu
+
+| Kata                                                                                                                               | Solved On   |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| [Snail](https://github.com/nighostchris/codust/blob/master/4kyu/snail/src/lib.rs)                                                  | 02-11-2022  |
+
 ### 5kyu
 
 | Kata                                                                                                                               | Solved On   |
