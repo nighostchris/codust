@@ -56,7 +56,7 @@ mod human_readable_time_test_suite {
 
     fn reference_solution(se: u32) -> String {
         let h = se / 3600;
-        let m = (se%3600) / 60;
+        let m = (se % 3600) / 60;
         let s = se - 3600 * h - 60 * m;
         format!("{h:0>2}:{m:0>2}:{s:0>2}")
     }

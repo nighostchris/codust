@@ -14,8 +14,9 @@ cargo test // Run test suite against solutions to validate them
 
 | Kata                                                                                                                               | Solved On   |
 | ---------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| [Moving Zeros To The End](https://github.com/nighostchris/codust/blob/master/8kyu/moving_zeros_to_the_end/src/lib.rs)              | 01-11-2022  |
-| [Human Readable Time](https://github.com/nighostchris/codust/blob/master/8kyu/human_readable_time/src/lib.rs)                      | 01-11-2022  |
+| [Moving Zeros To The End](https://github.com/nighostchris/codust/blob/master/5kyu/moving_zeros_to_the_end/src/lib.rs)              | 01-11-2022  |
+| [Human Readable Time](https://github.com/nighostchris/codust/blob/master/5kyu/human_readable_time/src/lib.rs)                      | 01-11-2022  |
+| [Maximum subarray sum](https://github.com/nighostchris/codust/blob/master/5kyu/maximum_subarray_sum/src/lib.rs)                    | 02-11-2022  |
 
 ### 6kyu
 
