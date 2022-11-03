@@ -17,6 +17,7 @@ cargo test // Run test suite against solutions to validate them
 | [Snail](https://github.com/nighostchris/codust/blob/master/4kyu/snail/src/lib.rs)                                                  | 02-11-2022  |
 | [Sum of Intervals](https://github.com/nighostchris/codust/blob/master/4kyu/sum_of_intervals/src/lib.rs)                            | 03-11-2022  |
 | [All Balanced Parentheses](https://github.com/nighostchris/codust/blob/master/4kyu/all_balanced_parentheses/src/lib.rs)            | 03-11-2022  |
+| [Pyramid Slide Down](https://github.com/nighostchris/codust/blob/master/4kyu/pyramid_slide_down/src/lib.rs)                        | 03-11-2022  |
 
 ### 5kyu
 

@@ -14,11 +14,26 @@ fn generate_balanced_parentheses(
     if open_bracket.eq(&0) && close_bracket.eq(&0) {
         output.push(cache);
     } else if close_bracket.eq(&open_bracket) {
-        generate_balanced_parentheses(open_bracket - 1, close_bracket, format!("{}(", cache), output);
+        generate_balanced_parentheses(
+            open_bracket - 1,
+            close_bracket,
+            format!("{}(", cache),
+            output,
+        );
     } else if close_bracket.gt(&open_bracket) {
-        generate_balanced_parentheses(open_bracket, close_bracket - 1, format!("{})", cache), output);
+        generate_balanced_parentheses(
+            open_bracket,
+            close_bracket - 1,
+            format!("{})", cache),
+            output,
+        );
         if open_bracket.ge(&1) {
-            generate_balanced_parentheses(open_bracket - 1, close_bracket, format!("{}(", cache), output);
+            generate_balanced_parentheses(
+                open_bracket - 1,
+                close_bracket,
+                format!("{}(", cache),
+                output,
+            );
         }
     }
 }
@@ -32,8 +47,8 @@ pub fn balanced_parens(n: u16) -> Vec<String> {
 #[cfg(test)]
 mod balanced_parens_test_suite {
     use super::*;
-    use rand::{thread_rng};
     use rand::seq::SliceRandom;
+    use rand::thread_rng;
     use std::collections::HashSet;
 
     fn reference_solution(n: u16) -> Vec<String> {
@@ -41,33 +56,26 @@ mod balanced_parens_test_suite {
             0 => vec![String::from("")],
             1 => vec![String::from("()")],
             _ => {
-                    let rec_res = balanced_parens(n - 1);
-                    let mut h = HashSet::new();
-                    rec_res
-                    .iter()
-                    .for_each(|s|
-                    {
-                        let mut o = 0;
-                        h.extend([
-                            ["()", s].join(""), 
-                            [s, "()"].join(""), 
-                            ["(", s, ")"].join(""),
-                        ]);
-                        s
-                        .chars()
-                        .enumerate()
-                        .for_each(|(i, c)|
-                        {
-                            if o == 0 {
-                                h.extend([
-                                    ["(", &s[..i], ")", &s[i..]].join(""),
-                                    [&s[..i], "()", &s[i..]].join(""),
-                                ]);
-                            }
-                            o += if c == '(' {1} else {-1}; 
-                            });
+                let rec_res = balanced_parens(n - 1);
+                let mut h = HashSet::new();
+                rec_res.iter().for_each(|s| {
+                    let mut o = 0;
+                    h.extend([
+                        ["()", s].join(""),
+                        [s, "()"].join(""),
+                        ["(", s, ")"].join(""),
+                    ]);
+                    s.chars().enumerate().for_each(|(i, c)| {
+                        if o == 0 {
+                            h.extend([
+                                ["(", &s[..i], ")", &s[i..]].join(""),
+                                [&s[..i], "()", &s[i..]].join(""),
+                            ]);
+                        }
+                        o += if c == '(' { 1 } else { -1 };
                     });
-                    Vec::from_iter(h)
+                });
+                Vec::from_iter(h)
             }
         }
     }
@@ -87,7 +95,16 @@ mod balanced_parens_test_suite {
             (0, vec![String::from("")]),
             (1, vec![String::from("()")]),
             (2, vec![String::from("(())"), String::from("()()")]),
-            (3, vec![String::from("((()))"), String::from("(()())"), String::from("(())()"), String::from("()(())"), String::from("()()()")]),
+            (
+                3,
+                vec![
+                    String::from("((()))"),
+                    String::from("(()())"),
+                    String::from("(())()"),
+                    String::from("()(())"),
+                    String::from("()()()"),
+                ],
+            ),
         ];
         for (n, exp) in tests.iter() {
             do_test(*n, exp.to_vec())
