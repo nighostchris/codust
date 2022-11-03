@@ -15,6 +15,7 @@ cargo test // Run test suite against solutions to validate them
 | Kata                                                                                                                               | Solved On   |
 | ---------------------------------------------------------------------------------------------------------------------------------- | ----------- |
 | [Snail](https://github.com/nighostchris/codust/blob/master/4kyu/snail/src/lib.rs)                                                  | 02-11-2022  |
+| [Sum of Intervals](https://github.com/nighostchris/codust/blob/master/4kyu/sum_of_intervals/src/lib.rs)                            | 03-11-2022  |
 
 ### 5kyu
 
