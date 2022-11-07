@@ -1,0 +1,6 @@
+[package]
+name = "decode_the_morse_code"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]

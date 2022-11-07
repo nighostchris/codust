@@ -37,6 +37,7 @@ cargo test // Run test suite against solutions to validate them
 | [Tribonacci Sequence](https://github.com/nighostchris/codust/blob/master/6kyu/tribonacci_sequence/src/lib.rs)                      | 29-10-2022  |
 | [Consecutive strings](https://github.com/nighostchris/codust/blob/master/6kyu/consecutive_strings/src/lib.rs)                      | 01-11-2022  |
 | [Multiples of 3 or 5](https://github.com/nighostchris/codust/blob/master/6kyu/multiples_of_3_or_5/src/lib.rs)                      | 01-11-2022  |
+| [Decode the Morse code](https://github.com/nighostchris/codust/blob/master/6kyu/decode_the_morse_code/src/lib.rs)                  | 07-11-2022  |
 
 ### 7kyu
 
